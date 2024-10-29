@@ -1,0 +1,85 @@
+% 页面设置
+\usepackage[a4paper,left=3.2cm,right=3.2cm,top=2.54cm,bottom=2.54cm]{geometry} % 页边距
+\pagestyle{empty} % 取消页码编号
+\renewcommand{\baselinestretch}{1.5} % 设置行间距为当前正文字体大小的 1.5 倍。
+
+% 设置正文为楷体和Times New Roman
+\let\CJKrmdefault=\rmdefault 
+\setCJKmainfont{KaiTi}
+\setmainfont{Times New Roman}
+
+% 参考文献格式
+\usepackage{gbt7714}
+\bibliographystyle{gbt7714-numerical} 
+\setlength{\bibsep}{0pt}
+
+% 年度研究计划中的项目符号
+\usepackage{amssymb}
+
+% 代表性成果中的列表格式
+\usepackage{enumerate}
+\usepackage{enumitem}
+\setlist[enumerate]{wide, parsep=0pt, topsep=0pt, itemsep=0pt}
+\setlist[itemize]{wide, parsep=0pt, topsep=0pt, itemsep=0pt}
+
+% 取消链接高亮
+\usepackage{hyperref}
+\hypersetup{hidelinks} 
+
+% 自定义命令
+\newcommand{\nsfClr}[1]{\textcolor[rgb]{0.0,0.44,0.753}{#1}}            % NSFC蓝色
+\newcommand{\alert}[1]{\nsfClr{\kaishu {#1}}}                           % 标蓝文字
+\newcommand{\authorFormat}[1]{\underline{\textbf{#1}}}                  % 代表性成果中的作者格式
+\newcommand{\journal}[1]{\emph{\textbf{#1}}}                            % 代表性成果中的期刊格式
+\newcommand{\SetTitle}[1]{                                              % “报告正文”格式
+   \begin{center} {\zihao{3} \kaishu \bfseries {#1}} \end{center}       
+}
+\newcommand{\TitleDes}[2]{\qquad{                                       % 基金正文说明格式
+   \zihao{4} \kaishu {#1}{\bf {\alert{#2}}}
+}}
+\newcommand{\ContentDes}[2]{\vspace{0.5em}\noindent \quad\ {            % “（一）立项依据与研究内容”等大标题格式       
+   \zihao{4} {\bf {\alert{#1}}}{\alert{#2}}
+}\vspace{0.5em}}
+\newcommand{\NsfcSection}[3]{{                                          % “1. 项目的立项依据”等一级标题格式
+	\setcounter{section}{#1}
+	\setcounter{subsection}{0}
+ 	\zihao{4} \nsfClr{#1. }{\bf{\alert{#2}}}{\alert{#3}}%
+}}
+
+% 标题、图例等格式设置
+\ctexset{
+	figurename = \kaishu 图,
+	tablename = \kaishu 表,                                    
+	bibname = {\zihao{4}\kaishu\leftline{参考文献}                   % 参考文献标题格式
+	},
+	subsection = {                                                  % 二级标题格式
+		format += \zihao{4}\kaishu\bf\raggedright,
+		beforeskip = 0.5em,
+		afterskip = 0.2em,
+		aftername = \hspace{0.5em},
+	},
+	subsubsection = {                                               % 三级标题格式
+		beforeskip = 0.3em,
+		afterskip = 0.2em,
+		aftername = \hspace{0.5em},
+	},
+	paragraph = {                                                   % 段落格式
+		indent = 2em,
+		beforeskip = 0em,
+		afterskip = 0em,
+	},
+}
+% 图例分隔设置为空格
+\usepackage{caption}
+\captionsetup{labelsep=space}
+
+
+
+
+
+
+
+
+
+
+
